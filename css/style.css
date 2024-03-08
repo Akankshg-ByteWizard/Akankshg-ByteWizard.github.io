@@ -1,0 +1,502 @@
+/* display background color black on navbar scroll */
+.navbarScroll.navbarDark {
+    background-color: black;
+}
+
+
+/* text css above hero image*/
+.hero_title {
+    font-size: 4.5rem;
+    color: black;
+}
+.hero_desc {
+    font-size: 2rem;
+    color: black;
+}
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#contact {
+    padding-bottom: 4rem;
+}
+/* about section image css */
+.imageAboutPage {
+    width: 100%;
+}
+
+/* services section css */
+.servicesText.card {
+    height: 280px;
+    cursor: pointer;
+  }
+.servicesIcon {
+    font-size: 36px;
+    text-align: center;
+    width: 100%;
+}
+.card-title {
+    text-align: center;
+}
+.card:hover .servicesIcon {
+    color: #008000;
+}
+.servicesText:hover {
+    border: 1px solid #008000;
+}
+
+/* social media icons styling */
+.social-icons {
+    font-size: 36px;
+    cursor: pointer;
+}
+.fa-facebook:hover,.fa-instagram:hover,.fa-twitter:hover,.fa-linkedin:hover, .fa-twitch:hover {
+    color: #008000;
+}
+.fab {
+    color: #000000;
+    font-size: 40px;
+}
+/* footer styling */
+#footer {
+    background-color: #808080;
+    text-align: center;
+}
+
+
+.button-container {
+  margin-right: 20px; /* Adjust margin as needed */
+}
+
+#footer {
+  background-color: #808080;
+  text-align: center;
+}
+
+
+.courses-wrapper {
+    display: flex;
+}
+
+.courses-column {
+    flex: 1;
+}
+
+.course {
+    margin-bottom: 20px;
+}
+
+
+
+.bookshelf {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  .project {
+    width: 250px;
+    height: 250px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+  .project img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .project-info-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .project:hover .project-info-box {
+    opacity: 1;
+  }
+  .project h2,
+  .project p {
+    margin: 0;
+  }
+
+
+  .shelf {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-left: 160px;
+  }
+  .list {
+    width: 250px;
+    height: 250px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+  .list img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .list-info-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .list:hover .list-info-box {
+    opacity: 1;
+  }
+  .list h2,
+  .list p {
+    margin: 0;
+  }
+
+
+
+  .shelf1 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-left: 40px;
+  }
+  .list1 {
+    width: 250px;
+    height: 250px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+  .list1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .list1-info-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .list1:hover .list1-info-box {
+    opacity: 1;
+  }
+  .list1 h2,
+  .list1 p {
+    margin: 0;
+  }
+
+
+
+.intro-social {
+  z-index          : 1;
+  list-style       : none;
+  display          : flex;
+  font-size        : 1rem;
+  font-weight      : 400;
+  text-transform   : uppercase;
+  letter-spacing   : .3em;
+  margin           : 0;
+  padding          : 0 0 0 9.6rem;
+  transform        : rotate(-90deg) translateX(-50%);
+  transform-origin : left bottom;
+  position         : absolute;
+  top              : 50%;
+  left             : calc(100% - 6rem);
+}
+
+.intro-social li {
+  color : pink;
+  padding : 0 1.2rem;
+}
+
+.intro-social a {
+  color : var(--color-text-light);
+}
+
+.intro-social a:focus,
+.intro-social a:hover {
+  color : white;
+}
+
+/* --------------------------------------------------------------------
+* ## intro scrolldown
+* -------------------------------------------------------------------- */
+.intro-scrolldown {
+  display         : block;
+  height          : var(--vspace-1);
+  width           : var(--vspace-1);
+  display         : flex;
+  justify-content : center;
+  align-items     : center;
+  position        : absolute;
+  bottom          : 4.8rem;
+  right           : 5.8rem;
+}
+
+.intro-scrolldown svg {
+  height : var(--vspace-0_75);
+  width  : var(--vspace-0_75);
+}
+
+.intro-scrolldown svg path {
+  fill       : white;
+  transition : all .3s ease-in-out;
+}
+
+.intro-scrolldown:focus svg path,
+.intro-scrolldown:hover svg path {
+  fill : var(--color-1);
+}
+
+
+
+
+.mailtoui-modal {
+  background-color: rgba(250,250,250,0.5);
+  color: #fff;
+}
+
+.mailtoui-modal-head {
+  background-color: black;
+}
+
+.mailtoui-modal-title {
+  color: #fff;
+}
+
+.mailtoui-modal-close:focus,
+.mailtoui-modal-close:hover {
+  color: #fff;
+}
+
+.mailtoui-modal-body {
+  background-color:  black;
+}
+
+.mailtoui-button:focus .mailtoui-button-content {
+  background-color: yellowgreen;
+  color: black;
+}
+
+.mailtoui-button-content,
+.mailtoui-button-copy {
+  background-color: black;
+  color: #fff;
+}
+
+.mailtoui-button-content:hover,
+.mailtoui-button-content:focus,
+.mailtoui-button-copy:hover,
+.mailtoui-button-copy:focus {
+  background-color: yellowgreen;
+  color: black
+}
+
+.mailtoui-button-copy-clicked,
+.mailtoui-button-copy-clicked:hover,
+.mailtoui-button-copy-clicked:focus {
+  background-color: #1F9D55;
+  color: #fff;
+}
+
+.mailtoui-email-address {
+  background-color: yellowgreen;
+  color: #21262c;
+}
+
+
+Copy code
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.custom-contact-link {
+  color: inherit; /* Or specify the color you want */
+}
+
+
+
+/* Modal Popup */
+.modal-popup {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 0 auto;
+  padding: 70px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px; /* Set a maximum width for better readability */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-popup1 {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Adjust the modal content styling */
+.modal-content1 {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 10px; /* Reduce padding to ensure content fits properly */
+  border: 1px solid #888;
+  width: 100%; /* Adjust width for better fit */
+  height: 700px;
+  max-width: 800px; /* Set a maximum width for better readability */
+  box-sizing: border-box; /* Include padding and border in width calculation */
+  overflow: auto; /* Add overflow property to enable scrolling if content exceeds modal height */
+}
+.close1 {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close1:hover,
+.close1:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+
+
+
+.ss-copyright {
+  margin-top: calc(var(--vspace-0_25) * -1);
+  margin-right: 5.2rem;
+  line-height: var(--vspace-0_875);
+}
+
+.ss-copyright span {
+  font-size: var(--text-sm);
+  display: inline-block;
+}
+
+.ss-copyright span::after {
+  content: "|";
+  display: inline-block;
+  padding: 0 .8rem 0 1rem;
+  color: rgba(255, 255, 255, 0.1);
+}
+
+.ss-copyright span:last-child::after {
+  display: none;
+}
+
+.ss-go-top {
+  z-index: 2;
+  position: absolute;
+  top: calc(var(--vspace-1) * -1);
+  right: var(--gutter);
+}
+
+.ss-go-top a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border: 1px solid var(--color-text);
+  height: calc(1.625 * var(--space));
+  width: var(--vspace-1_5);
+  background-color: var(--color-body);
+  position: relative;
+}
+
+.ss-go-top a:focus,
+.ss-go-top a:hover {
+  background-color: white;
+  border-color: white;
+}
+
+.ss-go-top a:focus svg path,
+.ss-go-top a:hover svg path {
+  fill: black;
+}
+
+.ss-go-top svg {
+  height: var(--vspace-0_5);
+  width: var(--vspace-0_5);
+  transition: all 0.3s ease-in-out;
+}
+
+.ss-go-top svg path {
+  fill: white;
+}
