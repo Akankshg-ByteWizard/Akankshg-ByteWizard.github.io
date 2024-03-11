@@ -138,8 +138,8 @@
   .shelf {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
-    margin-left: 160px;
+    gap: 10px;
+    margin-left: 10px;
   }
   .list {
     width: 250px;

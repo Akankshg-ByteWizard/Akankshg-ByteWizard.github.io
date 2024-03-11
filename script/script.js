@@ -26,15 +26,6 @@ document.querySelector('.intro-scrolldown').addEventListener('click', function(e
 const navLinks = document.querySelectorAll('.nav-item')
 const menuToggle = document.getElementById('navbarSupportedContent')
 
-navLinks.forEach((link) => {
-    link.addEventListener('click', () => {
-        // Close the modal
-        // resumeModal.style.display = 'none';
-        modal.style.display = "none";
-        // Toggle the collapse menu
-        new bootstrap.Collapse(menuToggle).toggle();
-    });
-});
 
 
 
@@ -112,3 +103,16 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+
+
+navLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+        // Close the modal
+        
+        //resumeModal.style.display = 'none';
+        modal.style.display = "none";
+        // Toggle the collapse menu
+        new bootstrap.Collapse(menuToggle).toggle();
+    });
+});
