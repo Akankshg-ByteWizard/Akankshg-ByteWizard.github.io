@@ -70,6 +70,18 @@ document.getElementById("project6").addEventListener("click", function() {
     openModal("Health Care Application", "description6", "img/healthcare.gif");
 });
 
+document.getElementById("work1").addEventListener("click", function() {
+    openModal("Remote Patient Monitoring", "work-description1","img/rpm.gif");
+});
+
+document.getElementById("work2").addEventListener("click", function() {
+    openModal("Predictive Risk Analysis on Clinical Data", "work-description2","img/predictive.gif");
+});
+
+document.getElementById("work3").addEventListener("click", function() {
+    openModal("Student Performance Predictor", "work-description3","img/student.gif");
+});
+
 
 
 
@@ -116,3 +128,62 @@ navLinks.forEach((link) => {
         new bootstrap.Collapse(menuToggle).toggle();
     });
 });
+
+
+
+
+
+
+
+$(function(){
+
+    window.sr = ScrollReveal();
+  
+    if ($(window).width() < 768) {
+  
+        if ($('.timeline-content').hasClass('js--fadeInLeft')) {
+            $('.timeline-content').removeClass('js--fadeInLeft').addClass('js--fadeInRight');
+        }
+  
+        sr.reveal('.js--fadeInRight', {
+          origin: 'right',
+          distance: '300px',
+          easing: 'ease-in-out',
+          duration: 800,
+        });
+  
+    } else {
+        
+        sr.reveal('.js--fadeInLeft', {
+          origin: 'left',
+          distance: '300px',
+            easing: 'ease-in-out',
+          duration: 800,
+        });
+  
+        sr.reveal('.js--fadeInRight', {
+          origin: 'right',
+          distance: '300px',
+          easing: 'ease-in-out',
+          duration: 800,
+        });
+  
+    }
+    
+    sr.reveal('.js--fadeInLeft', {
+          origin: 'left',
+          distance: '300px',
+            easing: 'ease-in-out',
+          duration: 800,
+        });
+  
+        sr.reveal('.js--fadeInRight', {
+          origin: 'right',
+          distance: '300px',
+          easing: 'ease-in-out',
+          duration: 800,
+        });
+  
+  
+  });
+  
