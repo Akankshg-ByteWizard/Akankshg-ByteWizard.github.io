@@ -6,6 +6,8 @@
     <title>Akanksh Gatla | Data Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&family=DM+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -30,6 +32,104 @@
             --nb-grid: #E8E0D0;
         }
 
+        body.dark {
+            --nb-bg: #0E0F12;
+            --nb-black: #F4F0E6;
+            --nb-yellow: #FFE135;
+            --nb-orange: #FF8C42;
+            --nb-electric: #00FF88;
+            --nb-blue: #6AA2FF;
+            --nb-red: #FF5E7A;
+            --nb-white: #15171C;
+            --nb-grid: #2A2D34;
+        }
+
+        body.dark .btn-primary,
+        body.dark .tag,
+        body.dark .skill-badge:nth-child(4n+1) {
+            color: #0A0A0A;
+        }
+
+        body.dark .journey-date {
+            background: #0A0A0A;
+            color: #FF8C42;
+            border-color: #0A0A0A;
+        }
+
+        body.dark .cert-tooltip {
+            background: #0A0A0A;
+            border-color: #0A0A0A;
+            color: #FF8C42;
+        }
+
+        body.dark .tooltip-label {
+            background: #0A0A0A;
+            color: #FF8C42;
+            border-color: #0A0A0A;
+        }
+
+        body.dark .contact-section {
+            background: #0A0A0A;
+            border-top-color: #0A0A0A;
+            border-bottom-color: #0A0A0A;
+        }
+
+        body.dark .contact-section,
+        body.dark .contact-section h2,
+        body.dark .contact-section p,
+        body.dark .contact-section label,
+        body.dark .contact-section a,
+        body.dark .contact-section div,
+        body.dark .contact-section .submit-btn {
+            color: #FFE135;
+        }
+
+        body.dark .contact-section .submit-btn {
+            background: #0A0A0A;
+            border-color: #FFE135;
+            box-shadow: 6px 6px 0px #FFE135;
+        }
+
+        body.dark .contact-section .form-group input,
+        body.dark .contact-section .form-group textarea {
+            background: #15171C;
+            color: #FFE135;
+            border-color: #FFE135;
+        }
+
+        body.dark footer,
+        body.dark footer h3,
+        body.dark footer p {
+            color: #FF8C42;
+        }
+
+        body.dark footer {
+            background: #0A0A0A;
+            border-top-color: #0A0A0A;
+        }
+
+        body.dark .navbar {
+            background: var(--nb-white);
+            border-bottom-color: var(--nb-black);
+        }
+
+        body.dark .navbar.scrolled {
+            background: var(--nb-yellow);
+        }
+
+        body.dark .social-icons a,
+        body.dark .footer-social a,
+        body.dark .back-to-top {
+            background: var(--nb-yellow);
+            color: #0A0A0A;
+            border-color: var(--nb-yellow);
+        }
+
+        body.dark .social-icons a:hover,
+        body.dark .footer-social a:hover {
+            background: var(--nb-orange);
+        }
+
         html {
             scroll-behavior: smooth;
         }
@@ -40,6 +140,8 @@
             color: var(--nb-black);
             line-height: 1.6;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         /* ============ NAVBAR ============ */
@@ -129,6 +231,28 @@
             background: var(--nb-orange);
         }
 
+        .theme-toggle {
+            margin-left: 0.75rem;
+            background: var(--nb-yellow);
+            color: var(--nb-black);
+            width: 44px;
+            height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid var(--nb-black);
+            box-shadow: 3px 3px 0px var(--nb-black);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: translate(3px, 3px);
+            box-shadow: none;
+            background: var(--nb-electric);
+        }
+
         /* ============ HERO SECTION ============ */
         .hero {
             min-height: 100vh;
@@ -206,6 +330,7 @@
             text-decoration: none;
             display: inline-block;
             transition: all 0.2s ease;
+            touch-action: manipulation;
         }
 
         .btn-primary {
@@ -391,6 +516,13 @@
             box-shadow: none;
         }
 
+        .edu-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
         .edu-badge {
             background: var(--nb-blue);
             color: var(--nb-white);
@@ -398,7 +530,16 @@
             border: 2px solid var(--nb-black);
             display: inline-block;
             font-weight: 700;
-            margin-bottom: 1rem;
+        }
+
+        .edu-logo {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            border: 3px solid var(--nb-black);
+            padding: 0.75rem;
+            background: var(--nb-white);
+            flex-shrink: 0;
         }
 
         .edu-card h3 {
@@ -480,6 +621,11 @@
             object-fit: cover;
             display: block;
             transition: opacity 0.2s ease;
+        }
+
+        .project-media .project-static,
+        .project-media .project-gif {
+            loading: lazy;
         }
 
         .project-media .project-gif {
@@ -1037,6 +1183,7 @@
             inset: -20%;
             pointer-events: none;
             z-index: 0;
+            will-change: transform;
         }
 
         .animated-section::before {
@@ -1405,6 +1552,27 @@
             .journey-card h4 {
                 font-size: 1rem;
             }
+
+            /* Education mobile */
+            .edu-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .edu-logo {
+                width: 100px;
+                height: 100px;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-content h2 {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
@@ -1425,6 +1593,7 @@
             <a href="https://www.linkedin.com/in/akanksh-gatla/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
             <a href="https://www.hackerrank.com/gattla_akanksh" target="_blank" title="HackerRank"><i class="fab fa-hackerrank"></i></a>
         </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
     </nav>
 
     <!-- ============ HERO SECTION ============ -->
@@ -1445,7 +1614,7 @@
             </div>
             <div class="hero-right">
                 <div class="hero-image-container">
-                    <img src="img/image.jpeg" alt="Akanksh Gatla" class="hero-image">
+                    <img src="img/image.jpeg" alt="Akanksh Gatla" class="hero-image" loading="eager">
                 </div>
                 <div class="terminal">
                     <div class="terminal-header">
@@ -1671,7 +1840,10 @@
         <h2 class="section-title">EDUCATION</h2>
         <div class="education-grid">
             <div class="edu-card">
-                <div class="edu-badge">🎓 UNIVERSITY AT BUFFALO</div>
+                <div class="edu-header">
+                    <img src="img/ublogo.png" alt="University at Buffalo" class="edu-logo" loading="lazy">
+                    <div class="edu-badge">🎓 UNIVERSITY AT BUFFALO</div>
+                </div>
                 <div class="edu-divider"></div>
                 <div class="degree">M.S. Computer Science & Engineering</div>
                 <div class="journey-divider"></div>
@@ -1690,7 +1862,10 @@
                 </div>
             </div>
             <div class="edu-card">
-                <div class="edu-badge">🎓 LOVELY PROFESSIONAL UNIVERSITY</div>
+                <div class="edu-header">
+                    <img src="img/lpu_logo.png" alt="Lovely Professional University" class="edu-logo" loading="lazy">
+                    <div class="edu-badge">🎓 LOVELY PROFESSIONAL UNIVERSITY</div>
+                </div>
                 <div class="edu-divider"></div>
                 <div class="degree">B.Tech Computer Science & Engineering</div>
                 <div class="journey-divider"></div>
@@ -1721,8 +1896,8 @@
                     <div class="project-date">Nov 2023</div>
                 </div>
                 <div class="project-media">
-                    <img src="img/crime.png" alt="State Crime Analysis" class="project-static">
-                    <img src="img/crimerate.gif" alt="State Crime Analysis preview" class="project-gif">
+                    <img src="img/crime.png" alt="State Crime Analysis" class="project-static" loading="lazy">
+                    <img src="img/crimerate.gif" alt="State Crime Analysis preview" class="project-gif" loading="lazy">
                 </div>
                 <div class="project-body">
                     <ul>
@@ -2221,15 +2396,48 @@
     </footer>
 
     <script>
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 100) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+        // Dark mode toggle
+        (function() {
+            const root = document.body;
+            const toggleBtn = document.getElementById('theme-toggle');
+            const storedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            function applyTheme(isDark) {
+                root.classList.toggle('dark', isDark);
+                if (toggleBtn) {
+                    toggleBtn.textContent = isDark ? '☀️' : '🌙';
+                }
             }
-        });
+
+            const initialDark = storedTheme ? storedTheme === 'dark' : prefersDark;
+            applyTheme(initialDark);
+
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', function() {
+                    const isDark = !root.classList.contains('dark');
+                    applyTheme(isDark);
+                    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                });
+            }
+        })();
+
+        // Navbar scroll effect
+        let ticking = false;
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    const navbar = document.getElementById('navbar');
+                    if (window.scrollY > 100) {
+                        navbar.classList.add('scrolled');
+                    } else {
+                        navbar.classList.remove('scrolled');
+                    }
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
 
         // Certification chart interactivity
         document.addEventListener('DOMContentLoaded', function() {

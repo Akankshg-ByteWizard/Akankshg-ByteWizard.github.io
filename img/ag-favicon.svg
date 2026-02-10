@@ -1,12 +1,6 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="ag-bg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#FFE135"/>
-      <stop offset="100%" stop-color="#FF6B35"/>
-    </linearGradient>
-  </defs>
-  <rect x="4" y="4" width="56" height="56" rx="10" fill="url(#ag-bg)" stroke="#0A0A0A" stroke-width="4"/>
-  <rect x="10" y="10" width="44" height="44" rx="8" fill="#FFFFFF" stroke="#0A0A0A" stroke-width="3"/>
-  <path d="M15 46L25.5 18H35.5L46 46H37.5L35.2 40H25.8L23.5 46H15ZM28.5 34H32.5L30.5 27L28.5 34Z" fill="#0A0A0A"/>
-  <path d="M36 24.5C36 21.462 38.462 19 41.5 19H49C52.038 19 54.5 21.462 54.5 24.5V27H49.5V24.5C49.5 23.671 48.829 23 48 23H42.5C41.671 23 41 23.671 41 24.5V39.5C41 40.329 41.671 41 42.5 41H48C48.829 41 49.5 40.329 49.5 39.5V36H45.5V31.5H54.5V39.5C54.5 42.538 52.038 45 49 45H41.5C38.462 45 36 42.538 36 39.5V24.5Z" fill="#0055FF"/>
+  <rect x="4" y="4" width="56" height="56" rx="8" fill="#FFE135" stroke="#0A0A0A" stroke-width="4"/>
+  <text x="50%" y="50%" text-anchor="middle" dominant-baseline="central"
+        font-family="'Bebas Neue', 'Arial Black', sans-serif" font-size="32"
+        font-weight="900" fill="#0A0A0A" letter-spacing="1">AG</text>
 </svg>
