@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akanksh Gatla | Data Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&family=DM+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --nb-bg: #FFFBF0;
+            --nb-black: #0A0A0A;
+            --nb-yellow: #FFE135;
+            --nb-orange: #FF6B35;
+            --nb-electric: #00FF88;
+            --nb-blue: #0055FF;
+            --nb-red: #FF2D55;
+            --nb-white: #FFFFFF;
+            --nb-grid: #E8E0D0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Space Mono', monospace;
+            background-color: var(--nb-bg);
+            color: var(--nb-black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ============ NAVBAR ============ */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--nb-white);
+            border-bottom: 3px solid var(--nb-black);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: var(--nb-yellow);
+        }
+
+        .logo {
+            background: var(--nb-yellow);
+            color: var(--nb-black);
+            padding: 0.5rem 1.5rem;
+            border: 3px solid var(--nb-black);
+            box-shadow: 4px 4px 0px var(--nb-black);
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .logo:hover {
+            transform: translate(4px, 4px);
+            box-shadow: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            background: var(--nb-white);
+            color: var(--nb-black);
+            padding: 0.5rem 1.2rem;
+            border: 2px solid var(--nb-black);
+            box-shadow: 3px 3px 0px var(--nb-black);
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.2s ease;
+            border-radius: 50px;
+        }
+
+        .nav-links a:hover {
+            transform: translate(3px, 3px);
+            box-shadow: none;
+            background: var(--nb-electric);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .social-icons a {
+            background: var(--nb-black);
+            color: var(--nb-white);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid var(--nb-black);
+            box-shadow: 3px 3px 0px var(--nb-black);
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.2s ease;
+        }
+
+        .social-icons a:hover {
+            transform: translate(3px, 3px);
+            box-shadow: none;
+            background: var(--nb-orange);
+        }
+
+        /* ============ HERO SECTION ============ */
+        .hero {
+            min-height: 100vh;
+            background-image: radial-gradient(circle, var(--nb-black) 1px, transparent 1px);
+            background-size: 24px 24px;
+            background-color: var(--nb-bg);
+            padding: 4rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-left h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 5rem;
+            line-height: 0.9;
+            margin-bottom: 1rem;
+            color: var(--nb-black);
+        }
+
+        .hero-left .divider {
+            width: 200px;
+            height: 4px;
+            background: var(--nb-black);
+            margin: 1.5rem 0;
+        }
+
+        .hero-left .roles {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--nb-orange);
+        }
+
+        .hero-left .location {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: var(--nb-black);
+        }
+
+        .hero-left .personality {
+            font-size: 1rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: var(--nb-white);
+            border-left: 6px solid var(--nb-electric);
+            border: 3px solid var(--nb-black);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            font-size: 1rem;
+            border: 3px solid var(--nb-black);
+            box-shadow: 6px 6px 0px var(--nb-black);
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: var(--nb-yellow);
+            color: var(--nb-black);
+        }
+
+        .btn-secondary {
+            background: var(--nb-white);
+            color: var(--nb-black);
+        }
+
+        .btn:hover {
+            transform: translate(6px, 6px);
+            box-shadow: none;
+        }
+
+        /* Terminal Card */
+        .terminal {
+            background: #1a1a1a;
+            border: 4px solid var(--nb-black);
+            box-shadow: 8px 8px 0px var(--nb-black);
+            font-family: 'Space Mono', monospace;
+            position: relative;
+        }
+
+        .terminal-header {
+            background: #2a2a2a;
+            padding: 0.5rem 1rem;
+            border-bottom: 2px solid var(--nb-black);
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 2px solid var(--nb-black);
+        }
+
+        .terminal-dot:nth-child(1) { background: var(--nb-red); }
+        .terminal-dot:nth-child(2) { background: var(--nb-yellow); }
+        .terminal-dot:nth-child(3) { background: var(--nb-electric); }
+
+        .terminal-body {
+            padding: 2rem;
+            color: var(--nb-electric);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .terminal-body .command {
+            color: var(--nb-yellow);
+        }
+
+        .terminal-body .key {
+            color: #8899ff;
+        }
+
+        .terminal-body .string {
+            color: #ff8866;
+        }
+
+        .cursor {
+            animation: blink 1s infinite;
+            color: var(--nb-electric);
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        /* ============ TICKER ============ */
+        .ticker-wrap {
+            background: var(--nb-black);
+            color: var(--nb-yellow);
+            padding: 1.5rem 0;
+            border-top: 4px solid var(--nb-black);
+            border-bottom: 4px solid var(--nb-black);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ticker {
+            display: flex;
+            animation: ticker 30s linear infinite;
+            white-space: nowrap;
+        }
+
+        .ticker-item {
+            padding: 0 3rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* ============ SECTION STYLES ============ */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 5rem;
+            margin-bottom: 3rem;
+            color: var(--nb-black);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: var(--nb-yellow);
+            border: 2px solid var(--nb-black);
+        }
+
+        /* ============ EDUCATION ============ */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .edu-card {
+            background: var(--nb-white);
+            border: 3px solid var(--nb-black);
+            box-shadow: 6px 6px 0px var(--nb-black);
+            padding: 2rem;
+            transition: all 0.2s ease;
+        }
+
+        .edu-card:hover {
+            transform: translate(6px, 6px);
+            box-shadow: none;
+        }
+
+        .edu-badge {
+            background: var(--nb-blue);
+            color: var(--nb-white);
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--nb-black);
+            display: inline-block;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .edu-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .edu-card .degree {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .edu-card .date {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .edu-divider {
+            width: 100%;
+            height: 2px;
+            background: var(--nb-black);
+            margin: 1rem 0;
+        }
+
+        .course-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: var(--nb-yellow);
+            color: var(--nb-black);
+            padding: 0.3rem 0.8rem;
+            border: 2px solid var(--nb-black);
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        /* ============ EXPERIENCE ============ */
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--nb-black);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-node {
+            position: absolute;
+            left: -38px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: var(--nb-yellow);
+            border: 3px solid var(--nb-black);
+        }
+
+        .exp-card {
+            background: var(--nb-white);
+            border: 3px solid var(--nb-black);
+            border-left: 6px solid var(--nb-orange);
+            box-shadow: 6px 6px 0px var(--nb-black);
+            padding: 2rem;
+            transition: all 0.2s ease;
+        }
+
+        .exp-card:hover {
+            transform: translate(6px, 6px);
+            box-shadow: none;
+        }
+
+        .exp-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .exp-card .company {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--nb-orange);
+            margin-bottom: 0.3rem;
+        }
+
+        .exp-card .duration {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .exp-divider {
+            width: 100%;
+            height: 2px;
+            background: var(--nb-black);
+            margin: 1rem 0;
+        }
+
+        .exp-card ul {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .exp-card ul li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+
+        .exp-card ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--nb-orange);
+            font-weight: 700;
+        }
+
+        /* ============ PROJECTS ============ */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--nb-white);
+            border: 3px solid var(--nb-black);
+            box-shadow: 6px 6px 0px var(--nb-black);
+            transition: all 0.2s ease;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            transform: translate(6px, 6px);
+            box-shadow: none;
+        }
+
+        .project-header {
+            padding: 1rem;
+            border-bottom: 3px solid var(--nb-black);
+        }
+
+        .project-card:nth-child(6n+1) .project-header { background: var(--nb-yellow); }
+        .project-card:nth-child(6n+2) .project-header { background: var(--nb-orange); }
+        .project-card:nth-child(6n+3) .project-header { background: var(--nb-electric); }
+        .project-card:nth-child(6n+4) .project-header { background: var(--nb-blue); color: var(--nb-white); }
+        .project-card:nth-child(6n+5) .project-header { background: var(--nb-red); color: var(--nb-white); }
+        .project-card:nth-child(6n+6) .project-header { background: var(--nb-yellow); }
+
+        .project-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .project-date {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        .project-body {
+            padding: 1.5rem;
+        }
+
+        .project-body ul {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .project-body ul li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .project-body ul li::before {
+            content: '●';
+            position: absolute;
+            left: 0;
+            color: var(--nb-orange);
+        }
+
+        .project-link {
+            display: inline-block;
+            background: var(--nb-black);
+            color: var(--nb-white);
+            padding: 0.5rem 1.5rem;
+            border: 2px solid var(--nb-black);
+            box-shadow: 3px 3px 0px var(--nb-black);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .project-link:hover {
+            transform: translate(3px, 3px);
+            box-shadow: none;
+            background: var(--nb-orange);
+        }
+
+        /* ============ SKILLS ============ */
+        .skills-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--nb-white);
+            border: 3px solid var(--nb-black);
+            box-shadow: 6px 6px 0px var(--nb-black);
+            padding: 2rem;
+        }
+
+        .skill-category h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--nb-black);
+        }
+
+        .skill-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .skill-badge {
+            padding: 0.7rem 1.5rem;
+            border: 2px solid var(--nb-black);
+            box-shadow: 3px 3px 0px var(--nb-black);
+            font-weight: 700;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-badge:hover {
+            transform: translate(3px, 3px);
+            box-shadow: none;
+        }
+
+        .skill-badge:nth-child(4n+1) { background: var(--nb-yellow); }
+        .skill-badge:nth-child(4n+2) { background: var(--nb-orange); color: var(--nb-white); }
+        .skill-badge:nth-child(4n+3) { background: var(--nb-electric); }
+        .skill-badge:nth-child(4n+4) { background: var(--nb-white); }
+
+        .skill-badge i,
+        .skill-badge img {
+            font-size: 1.5rem;
+            width: 24px;
+            height: 24px;
+        }
+
+        /* ============ CERTIFICATIONS ============ */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cert-card {
+            background: var(--nb-white);
+            border: 3px solid var(--nb-black);
+            box-shadow: 4px 4px 0px var(--nb-black);
+            padding: 1.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .cert-card:hover {
+            transform: translate(4px, 4px);
+            box-shadow: none;
+        }
+
+        .cert-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-card .issuer {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* ============ FOOTER ============ */
+        footer {
+            background: var(--nb-black);
+            color: var(--nb-white);
+            padding: 3rem 2rem;
+            border-top: 6px solid var(--nb-yellow);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social a {
+            background: var(--nb-yellow);
+            color: var(--nb-black);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid var(--nb-yellow);
+            box-shadow: 4px 4px 0px var(--nb-yellow);
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .footer-social a:hover {
+            transform: translate(4px, 4px);
+            box-shadow: none;
+        }
+
+        .back-to-top {
+            background: var(--nb-electric);
+            color: var(--nb-black);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid var(--nb-electric);
+            box-shadow: 4px 4px 0px var(--nb-electric);
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .back-to-top:hover {
+            transform: translate(4px, 4px);
+            box-shadow: none;
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero-left h1 {
+                font-size: 4rem;
+            }
+
+            .section-title {
+                font-size: 4rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-left h1 {
+                font-size: 3rem;
+            }
+
+            .section-title {
+                font-size: 3rem;
+            }
+
+            .education-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .navbar {
+                padding: 1rem;
+            }
+
+            section {
+                padding: 4rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ============ NAVBAR ============ -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="logo">AG</a>
+        <ul class="nav-links">
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#education">EDUCATION</a></li>
+            <li><a href="#experience">EXPERIENCE</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#skills">SKILLS</a></li>
+        </ul>
+        <div class="social-icons">
+            <a href="https://github.com/Akankshg-ByteWizard" target="_blank">GH</a>
+            <a href="https://www.linkedin.com/in/akanksh-gatla/" target="_blank">IN</a>
+            <a href="https://www.hackerrank.com/gattla_akanksh" target="_blank">HR</a>
+        </div>
+    </nav>
+
+    <!-- ============ HERO SECTION ============ -->
+    <section class="hero" id="about">
+        <div class="hero-content">
+            <div class="hero-left">
+                <h1>&gt; AKANKSH<br>GATLA</h1>
+                <div class="divider"></div>
+                <div class="roles">Data Engineer | Software Developer</div>
+                <div class="location">University at Buffalo, New York</div>
+                <div class="personality">
+                    "I turn raw data into insights and raw code into pipelines. Sometimes I even shower."
+                </div>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn btn-primary">[ SEE MY WORK → ]</a>
+                    <a href="https://drive.google.com/file/d/12a5CgFCURNS7PL7mmcLVvT-s5_vBa4oB/preview" target="_blank" class="btn btn-secondary">[ GRAB MY RESUME ]</a>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <div class="terminal-dot"></div>
+                        <div class="terminal-dot"></div>
+                        <div class="terminal-dot"></div>
+                    </div>
+                    <div class="terminal-body">
+                        <div><span class="command">$ cat akanksh_profile.json</span></div>
+                        <div>&nbsp;</div>
+                        <div>{</div>
+                        <div>&nbsp;&nbsp;<span class="key">"experience"</span>: <span class="string">"4+ years"</span>,</div>
+                        <div>&nbsp;&nbsp;<span class="key">"ms_degree"</span>: <span class="string">"UB New York"</span>,</div>
+                        <div>&nbsp;&nbsp;<span class="key">"certifications"</span>: <span class="string">9</span>,</div>
+                        <div>&nbsp;&nbsp;<span class="key">"projects"</span>: <span class="string">"6+"</span>,</div>
+                        <div>&nbsp;&nbsp;<span class="key">"publications"</span>: <span class="string">1</span>,</div>
+                        <div>&nbsp;&nbsp;<span class="key">"coffee_consumed"</span>: <span class="string">"∞"</span></div>
+                        <div>}</div>
+                        <div>&nbsp;</div>
+                        <div>&gt; ready to scale your data. <span class="cursor">▋</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ NEWS TICKER ============ -->
+    <div class="ticker-wrap">
+        <div class="ticker">
+            <span class="ticker-item">🗞 Jul '23 — Published at IREJT</span>
+            <span class="ticker-item">⚡ Feb '23 — Data Engineer @ Datalysys USA</span>
+            <span class="ticker-item">🎓 Dec '22 — MS @ University at Buffalo</span>
+            <span class="ticker-item">💼 Jan '20 — Data Engineer @ Unity Population Health</span>
+            <span class="ticker-item">🚀 Jun '19 — Data Scientist Intern @ The Spark Foundation</span>
+            <span class="ticker-item">🎓 May '19 — B.Tech @ Lovely Professional University</span>
+            <!-- Duplicate for seamless loop -->
+            <span class="ticker-item">🗞 Jul '23 — Published at IREJT</span>
+            <span class="ticker-item">⚡ Feb '23 — Data Engineer @ Datalysys USA</span>
+            <span class="ticker-item">🎓 Dec '22 — MS @ University at Buffalo</span>
+            <span class="ticker-item">💼 Jan '20 — Data Engineer @ Unity Population Health</span>
+            <span class="ticker-item">🚀 Jun '19 — Data Scientist Intern @ The Spark Foundation</span>
+            <span class="ticker-item">🎓 May '19 — B.Tech @ Lovely Professional University</span>
+        </div>
+    </div>
+
+    <!-- ============ EDUCATION ============ -->
+    <section id="education">
+        <h2 class="section-title">EDUCATION</h2>
+        <div class="education-grid">
+            <div class="edu-card">
+                <div class="edu-badge">🎓 UNIVERSITY AT BUFFALO</div>
+                <div class="edu-divider"></div>
+                <div class="degree">M.S. Computer Science & Engineering</div>
+                <div class="date">Dec 2022 — Dec 2023</div>
+                <div class="course-tags">
+                    <span class="tag">ML</span>
+                    <span class="tag">Data Computing</span>
+                    <span class="tag">Algorithms</span>
+                    <span class="tag">Programming</span>
+                    <span class="tag">Database</span>
+                </div>
+            </div>
+            <div class="edu-card">
+                <div class="edu-badge">🎓 LOVELY PROFESSIONAL UNIVERSITY</div>
+                <div class="edu-divider"></div>
+                <div class="degree">B.Tech Computer Science & Engineering</div>
+                <div class="date">Jul 2015 — May 2019</div>
+                <div class="course-tags">
+                    <span class="tag">Data Structures</span>
+                    <span class="tag">DBMS</span>
+                    <span class="tag">OOP</span>
+                    <span class="tag">Algorithms</span>
+                    <span class="tag">Networks</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section id="experience">
+        <h2 class="section-title">EXPERIENCE</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-node"></div>
+                <div class="exp-card">
+                    <h3>Data Engineer</h3>
+                    <div class="company">Datalysys USA (Unity Population Health)</div>
+                    <div class="duration">Feb 2023 – Present | Buffalo, NY</div>
+                    <div class="exp-divider"></div>
+                    <ul>
+                        <li>Designed and maintained ETL pipelines for population health data</li>
+                        <li>Worked with large-scale healthcare datasets using SQL and Python</li>
+                        <li>Optimized data transformation workflows for improved efficiency</li>
+                        <li>Collaborated with cross-functional teams on data integration projects</li>
+                    </ul>
+                    <div class="course-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">ETL</span>
+                        <span class="tag">Healthcare Data</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-node"></div>
+                <div class="exp-card">
+                    <h3>Data Engineer</h3>
+                    <div class="company">Unity Population Health</div>
+                    <div class="duration">Jan 2020 – Dec 2022 | Remote</div>
+                    <div class="exp-divider"></div>
+                    <ul>
+                        <li>Promoted from Junior Data Engineer to Data Engineer</li>
+                        <li>Built data transformation workflows for healthcare analytics</li>
+                        <li>Developed automated data quality checks and monitoring</li>
+                        <li>Managed database operations and performance optimization</li>
+                    </ul>
+                    <div class="course-tags">
+                        <span class="tag">SQL</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Data Pipelines</span>
+                        <span class="tag">Analytics</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-node"></div>
+                <div class="exp-card">
+                    <h3>Data Scientist Intern</h3>
+                    <div class="company">The Spark Foundation</div>
+                    <div class="duration">Apr 2019 – Jun 2019</div>
+                    <div class="exp-divider"></div>
+                    <ul>
+                        <li>Worked on machine learning models for predictive analytics</li>
+                        <li>Performed exploratory data analysis on various datasets</li>
+                        <li>Created data visualizations and insights reports</li>
+                        <li>Collaborated on supervised and unsupervised learning projects</li>
+                    </ul>
+                    <div class="course-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">EDA</span>
+                        <span class="tag">Scikit-learn</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects">
+        <h2 class="section-title">PROJECTS</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>State Crime Analysis & Safety Prediction</h3>
+                    <div class="project-date">Nov 2023</div>
+                </div>
+                <div class="project-body">
+                    <ul>
+                        <li>R² = 94.8% Random Forest model for crime prediction</li>
+                        <li>Analyzed 10+ years of state-level crime data</li>
+                        <li>Built interactive visualizations with Python</li>
+                        <li>Deployed as web dashboard for insights</li>
+                    </ul>
+                    <div class="course-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">ML</span>
+                        <span class="tag">Pandas</span>
+                    </div>
+                    <a href="https://github.com/Akankshg-ByteWizard/UB-CSE-587-State-Crime-Analysis-and-Safety-Prediction" target="_blank" class="project-link">→ GITHUB</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Wikipedia API Scraping + Solr</h3>
+                    <div class="project-date">Oct 2023</div>
+                </div>
+                <div class="project-body">
+                    <ul>
+                        <li>Scraped 500+ Wikipedia docs via API</li>
+                        <li>Implemented full-text search with Apache Solr</li>
+                        <li>Deployed on Google Cloud Platform</li>
+                        <li>Optimized query performance with indexing</li>
+                    </ul>
+                    <div class="course-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Solr</span>
+                        <span class="tag">GCP</span>
+                    </div>
+                    <a href="https://github.com/Akankshg-ByteWizard/Wikipedia-Scraping-Using-API-with-Solr-Integration-on-Google-Cloud-Platform" target="_blank" class="project-link">→ GITHUB</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Boolean Query & Inverted Index</h3>
+                    <div class="project-date">Aug 2023</div>
+                </div>
+                <div class="project-body">
+                    <ul>
+                        <li>Flask REST API for document retrieval</li>
+                        <li>Implemented inverted index from scratch</li>
+                        <li>Support for complex boolean queries</li>
+                        <li>Efficient search on large document corpus</li>
+                    </ul>
+                    <div class="course-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Flask</span>
+                        <span class="tag">IR</span>
+                    </div>
+                    <a href="https://github.com/Akankshg-ByteWizard/Boolean-Query-and-Inverted-Index" target="_blank" class="project-link">→ GITHUB</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Global Super Store CRUD App</h3>
+                    <div class="project-date">Apr 2023</div>
+                </div>
+                <div class="project-body">
+                    <ul>
+                        <li>PostgreSQL database with strategic indexing</li>
+                        <li>Full CRUD operations web interface</li>
+                        <li>Query optimization for fast retrieval</li>
+                        <li>RESTful API design patterns</li>
+                    </ul>
+                    <div class="course-tags">
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">REST</span>
+                    </div>
+                    <a href="https://github.com/Akankshg-ByteWizard/UB-CSE-560-Superstore-Database-Management-System-DBMS-Project" target="_blank" class="project-link">→ GITHUB</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>8-bit Computer Architecture Processor</h3>
+                    <div class="project-date">Apr 2023</div>
+                </div>
+                <div class="project-body">
+                    <ul>
+                        <li>Designed using Verilog HDL</li>
+                        <li>Synthesized with Xilinx Vivado</li>
+                        <li>Non-pipelined architecture implementation</li>
+                        <li>Complete instruction set design</li>
+                    </ul>
+                    <div class="course-tags">
+                        <span class="tag">Verilog</span>
+                        <span class="tag">FPGA</span>
+                        <span class="tag">Vivado</span>
+                    </div>
+                    <a href="https://github.com/Akankshg-ByteWizard/UB-CSE-590-Design-of-an-8-bit-Processor-non-pipelined" target="_blank" class="project-link">→ GITHUB</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Healthcare ML Application</h3>
+                    <div class="project-date">May 2022</div>
+                </div>
+                <div class="project-body">
+                    <ul>
+                        <li>89% F1 Score Random Forest Classifier</li>
+                        <li>Predictive modeling for patient outcomes</li>
+                        <li>Feature engineering on medical data</li>
+                        <li>Model deployment as Flask API</li>
+                    </ul>
+                    <div class="course-tags">
+                        <span class="tag">ML</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Flask</span>
+                    </div>
+                    <a href="https://github.com/Akankshg-ByteWizard/LPU-Health-Care-Application" target="_blank" class="project-link">→ GITHUB</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills">
+        <h2 class="section-title">TECH STACK</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>PROGRAMMING LANGUAGES</h3>
+                <div class="skill-badges">
+                    <div class="skill-badge">
+                        <i class="devicon-python-plain"></i>
+                        Python
+                    </div>
+                    <div class="skill-badge">
+                        <i class="devicon-java-plain"></i>
+                        Java
+                    </div>
+                    <div class="skill-badge">
+                        <i class="devicon-cplusplus-plain"></i>
+                        C++
+                    </div>
+                    <div class="skill-badge">
+                        <i class="devicon-r-original"></i>
+                        R
+                    </div>
+                    <div class="skill-badge">
+                        <i class="devicon-javascript-plain"></i>
+                        JavaScript
+                    </div>
+                    <div class="skill-badge">
+                        <i class="devicon-mysql-plain"></i>
+                        SQL
+                    </div>
+                    <div class="skill-badge">
+                        LaTeX
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>BIG DATA & FRAMEWORKS</h3>
+                <div class="skill-badges">
+                    <div class="skill-badge">
+                        Apache Spark
+                    </div>
+                    <div class="skill-badge">
+                        Hadoop
+                    </div>
+                    <div class="skill-badge">
+                        <i class="devicon-flask-original"></i>
+                        Flask
+                    </div>
+                    <div class="skill-badge">
+                        <i class="devicon-django-plain"></i>
+                        Django
+                    </div>
+                    <div class="skill-badge">
+                        <i class="devicon-pandas-plain"></i>
+                        Pandas
+                    </div>
+                    <div class="skill-badge">
+                        NumPy
+                    </div>
+                    <div class="skill-badge">
+                        Scikit-learn
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>DATABASES & TOOLS</h3>
+                <div class="skill-badges">
+                    <div class="skill-badge">
+                        <i class="devicon-postgresql-plain"></i>
+                        PostgreSQL
+                    </div>
+                    <div class="skill-badge">
+                        <i class="devicon-mysql-plain"></i>
+                        MySQL
+                    </div>
+                    <div class="skill-badge">
+                        <i class="devicon-mongodb-plain"></i>
+                        MongoDB
+                    </div>
+                    <div class="skill-badge">
+                        <i class="devicon-git-plain"></i>
+                        Git
+                    </div>
+                    <div class="skill-badge">
+                        <i class="devicon-docker-plain"></i>
+                        Docker
+                    </div>
+                    <div class="skill-badge">
+                        Apache Solr
+                    </div>
+                    <div class="skill-badge">
+                        Linux
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>CLOUD & DEVOPS</h3>
+                <div class="skill-badges">
+                    <div class="skill-badge">
+                        <i class="devicon-googlecloud-plain"></i>
+                        Google Cloud
+                    </div>
+                    <div class="skill-badge">
+                        <i class="devicon-amazonwebservices-plain-wordmark"></i>
+                        AWS
+                    </div>
+                    <div class="skill-badge">
+                        Tableau
+                    </div>
+                    <div class="skill-badge">
+                        Power BI
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CERTIFICATIONS ============ -->
+    <section id="certifications">
+        <h2 class="section-title">CERTIFICATIONS</h2>
+        <div class="cert-grid">
+            <div class="cert-card">
+                <h4>AWS Certified Cloud Practitioner</h4>
+                <div class="issuer">Amazon Web Services</div>
+            </div>
+            <div class="cert-card">
+                <h4>Python for Data Science</h4>
+                <div class="issuer">IBM</div>
+            </div>
+            <div class="cert-card">
+                <h4>Machine Learning Specialization</h4>
+                <div class="issuer">Coursera</div>
+            </div>
+            <div class="cert-card">
+                <h4>SQL for Data Science</h4>
+                <div class="issuer">UC Davis</div>
+            </div>
+            <div class="cert-card">
+                <h4>Data Engineering Foundations</h4>
+                <div class="issuer">LinkedIn Learning</div>
+            </div>
+            <div class="cert-card">
+                <h4>Apache Spark Essential Training</h4>
+                <div class="issuer">LinkedIn Learning</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; margin-bottom: 0.5rem;">AKANKSH GATLA</h3>
+                <p>© 2024 — Built with pure HTML + CSS</p>
+            </div>
+            <div class="footer-social">
+                <a href="https://github.com/Akankshg-ByteWizard" target="_blank">GH</a>
+                <a href="https://www.linkedin.com/in/akanksh-gatla/" target="_blank">IN</a>
+                <a href="https://www.hackerrank.com/gattla_akanksh" target="_blank">HR</a>
+            </div>
+            <a href="#about" class="back-to-top">↑</a>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

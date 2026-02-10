@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&family=DM+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="icon" href="img/ag-favicon.svg" type="image/svg+xml" />
     
     <style>
         * {
@@ -465,37 +464,6 @@
             border-bottom: 3px solid var(--nb-black);
         }
 
-        .project-media {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            overflow: hidden;
-            border-bottom: 3px solid var(--nb-black);
-            background: var(--nb-white);
-        }
-
-        .project-media img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: opacity 0.2s ease;
-        }
-
-        .project-media .project-gif {
-            position: absolute;
-            inset: 0;
-            opacity: 0;
-        }
-
-        .project-card:hover .project-media .project-gif {
-            opacity: 1;
-        }
-
-        .project-card:hover .project-media .project-static {
-            opacity: 0;
-        }
-
         .project-card:nth-child(6n+1) .project-header { background: var(--nb-yellow); }
         .project-card:nth-child(6n+2) .project-header { background: var(--nb-orange); }
         .project-card:nth-child(6n+3) .project-header { background: var(--nb-electric); }
@@ -702,16 +670,6 @@
             transform: rotate(15deg) scale(1.1);
         }
 
-        .journey-node-logo {
-            width: 52px;
-            height: 52px;
-            object-fit: contain;
-            background: transparent;
-            border: none;
-            padding: 0;
-            border-radius: 0;
-        }
-
         .journey-card {
             background: var(--nb-white);
             border: 3px solid var(--nb-black);
@@ -856,10 +814,6 @@
             display: block;
         }
 
-        .cert-name {
-            font-size: 11px;
-        }
-
         .cert-data-point {
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -870,8 +824,7 @@
         }
 
         .cert-data-point:hover .point-emoji {
-            transform: scale(1.1);
-            transform-origin: center;
+            font-size: 28px;
         }
 
         .cert-data-point:hover .point-hover-ring {
@@ -911,42 +864,27 @@
         }
 
         .cert-tooltip[data-cert="1"] {
-            left: 170px;
+            left: 150px;
             top: -200px;
         }
 
         .cert-tooltip[data-cert="2"] {
-            left: 360px;
+            left: 350px;
             top: -200px;
         }
 
         .cert-tooltip[data-cert="3"] {
-            left: 500px;
+            left: 550px;
             top: -200px;
         }
 
         .cert-tooltip[data-cert="4"] {
-            left: 620px;
+            left: 750px;
             top: -200px;
         }
 
         .cert-tooltip[data-cert="5"] {
-            left: 740px;
-            top: -200px;
-        }
-
-        .cert-tooltip[data-cert="6"] {
-            left: 840px;
-            top: -200px;
-        }
-
-        .cert-tooltip[data-cert="7"] {
-            left: 960px;
-            top: -200px;
-        }
-
-        .cert-tooltip[data-cert="8"] {
-            left: 1080px;
+            left: 950px;
             top: -200px;
         }
 
@@ -1024,138 +962,39 @@
             font-size: 0.9rem;
         }
 
-        /* Animated section backgrounds */
-        .animated-section {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .animated-section::before,
-        .animated-section::after {
+        /* Section background animations */
+        section::before {
             content: '';
             position: absolute;
-            inset: -20%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle, rgba(255, 225, 53, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
             pointer-events: none;
             z-index: 0;
         }
 
-        .animated-section::before {
-            background:
-                radial-gradient(40% 40% at 10% 10%, var(--bg-blob-1), transparent 60%),
-                radial-gradient(50% 50% at 80% 20%, var(--bg-blob-2), transparent 60%),
-                radial-gradient(45% 45% at 20% 80%, var(--bg-blob-3), transparent 60%),
-                radial-gradient(55% 55% at 90% 90%, var(--bg-blob-4), transparent 60%);
-            filter: blur(2px);
-            opacity: 0.8;
-            animation: floatBlob 18s ease-in-out infinite alternate;
+        section {
+            position: relative;
         }
 
-        .animated-section::after {
-            background:
-                repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.03) 0 2px, transparent 2px 12px),
-                linear-gradient(120deg, var(--bg-sheen-1), var(--bg-sheen-2));
-            mix-blend-mode: multiply;
-            opacity: 0.6;
-            animation: driftSheen 30s linear infinite;
-        }
-
-        .animated-section > * {
+        section > * {
             position: relative;
             z-index: 1;
         }
 
-        @keyframes floatBlob {
-            0% {
-                transform: translate3d(-2%, -1%, 0) scale(1);
-            }
-            50% {
-                transform: translate3d(2%, 3%, 0) scale(1.03);
-            }
-            100% {
-                transform: translate3d(-1%, 2%, 0) scale(1.05);
-            }
+        /* Company logo in journey */
+        .journey-company-logo {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+            border: 2px solid var(--nb-black);
+            padding: 0.5rem;
+            background: var(--nb-white);
         }
-
-        @keyframes driftSheen {
-            0% {
-                transform: translate3d(-5%, -5%, 0) rotate(0deg);
-            }
-            100% {
-                transform: translate3d(5%, 5%, 0) rotate(6deg);
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .animated-section::before,
-            .animated-section::after {
-                animation: none;
-            }
-        }
-
-        /* Per-section color palettes */
-        .bg-hero {
-            --bg-blob-1: rgba(255, 225, 53, 0.25);
-            --bg-blob-2: rgba(0, 255, 136, 0.22);
-            --bg-blob-3: rgba(0, 85, 255, 0.18);
-            --bg-blob-4: rgba(255, 107, 53, 0.2);
-            --bg-sheen-1: rgba(255, 225, 53, 0.08);
-            --bg-sheen-2: rgba(0, 0, 0, 0);
-        }
-
-        .bg-journey {
-            --bg-blob-1: rgba(255, 107, 53, 0.22);
-            --bg-blob-2: rgba(0, 85, 255, 0.2);
-            --bg-blob-3: rgba(255, 45, 85, 0.2);
-            --bg-blob-4: rgba(255, 225, 53, 0.18);
-            --bg-sheen-1: rgba(0, 0, 0, 0.02);
-            --bg-sheen-2: rgba(255, 107, 53, 0.06);
-        }
-
-        .bg-education {
-            --bg-blob-1: rgba(0, 85, 255, 0.18);
-            --bg-blob-2: rgba(0, 255, 136, 0.2);
-            --bg-blob-3: rgba(255, 225, 53, 0.18);
-            --bg-blob-4: rgba(255, 107, 53, 0.16);
-            --bg-sheen-1: rgba(0, 85, 255, 0.06);
-            --bg-sheen-2: rgba(0, 0, 0, 0);
-        }
-
-        .bg-projects {
-            --bg-blob-1: rgba(255, 45, 85, 0.2);
-            --bg-blob-2: rgba(255, 107, 53, 0.2);
-            --bg-blob-3: rgba(0, 255, 136, 0.16);
-            --bg-blob-4: rgba(0, 85, 255, 0.16);
-            --bg-sheen-1: rgba(255, 45, 85, 0.06);
-            --bg-sheen-2: rgba(0, 0, 0, 0);
-        }
-
-        .bg-skills {
-            --bg-blob-1: rgba(0, 255, 136, 0.2);
-            --bg-blob-2: rgba(255, 225, 53, 0.2);
-            --bg-blob-3: rgba(0, 85, 255, 0.18);
-            --bg-blob-4: rgba(255, 107, 53, 0.16);
-            --bg-sheen-1: rgba(0, 255, 136, 0.06);
-            --bg-sheen-2: rgba(0, 0, 0, 0);
-        }
-
-        .bg-certs {
-            --bg-blob-1: rgba(255, 225, 53, 0.22);
-            --bg-blob-2: rgba(255, 45, 85, 0.18);
-            --bg-blob-3: rgba(0, 85, 255, 0.18);
-            --bg-blob-4: rgba(0, 255, 136, 0.18);
-            --bg-sheen-1: rgba(255, 225, 53, 0.06);
-            --bg-sheen-2: rgba(0, 0, 0, 0);
-        }
-
-        .bg-contact {
-            --bg-blob-1: rgba(0, 0, 0, 0.08);
-            --bg-blob-2: rgba(255, 107, 53, 0.18);
-            --bg-blob-3: rgba(0, 85, 255, 0.16);
-            --bg-blob-4: rgba(255, 225, 53, 0.2);
-            --bg-sheen-1: rgba(0, 0, 0, 0.04);
-            --bg-sheen-2: rgba(255, 225, 53, 0.08);
-        }
-
 
         /* ============ GET IN TOUCH SECTION ============ */
         .contact-section {
@@ -1428,7 +1267,7 @@
     </nav>
 
     <!-- ============ HERO SECTION ============ -->
-    <section class="hero animated-section bg-hero" id="about">
+    <section class="hero" id="about">
         <div class="hero-content">
             <div class="hero-left">
                 <h1>&gt; AKANKSH<br>GATLA</h1>
@@ -1488,7 +1327,7 @@
     </div>
 
     <!-- ============ MY JOURNEY ============ -->
-    <section id="journey" class="animated-section bg-journey">
+    <section id="journey">
         <h2 class="section-title">MY JOURNEY</h2>
         <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; color: var(--text-700);">
             Building AI-powered data systems at scale — from startups to Fortune 500
@@ -1498,7 +1337,7 @@
             <!-- Journey Item 1 -->
             <div class="journey-item">
                 <div class="journey-node">
-                    <img src="img/capital_one_logo.jpeg" alt="Capital One" class="journey-node-logo">
+                    <span>🏦</span>
                 </div>
                 <div class="journey-card">
                     <div class="journey-header">
@@ -1527,7 +1366,7 @@
             <!-- Journey Item 2 -->
             <div class="journey-item">
                 <div class="journey-node">
-                    <img src="img/genzeon_logo.jpeg" alt="Genzeon" class="journey-node-logo">
+                    <span>🔧</span>
                 </div>
                 <div class="journey-card">
                     <div class="journey-header">
@@ -1555,7 +1394,7 @@
             <!-- Journey Item 3 -->
             <div class="journey-item">
                 <div class="journey-node">
-                    <img src="img/capital_one_logo.jpeg" alt="Capital One" class="journey-node-logo">
+                    <span>📊</span>
                 </div>
                 <div class="journey-card">
                     <div class="journey-header">
@@ -1583,10 +1422,11 @@
             <!-- Journey Item 4 -->
             <div class="journey-item">
                 <div class="journey-node">
-                    <img src="img/unitypophealth_logo.jpeg" alt="Unity Population Health" class="journey-node-logo">
+                    <span>💼</span>
                 </div>
                 <div class="journey-card">
                     <div class="journey-header">
+                        <img src="img/unity.png" alt="Unity Population Health" class="journey-company-logo">
                         <div class="journey-date">AUG 2023 - NOV 2024</div>
                         <h3>Data Engineer</h3>
                         <h4>Unity Population Health | Columbus, Ohio</h4>
@@ -1611,10 +1451,11 @@
             <!-- Journey Item 5 -->
             <div class="journey-item">
                 <div class="journey-node">
-                    <img src="img/unitypophealth_logo.jpeg" alt="Unity Population Health" class="journey-node-logo">
+                    <span>🚀</span>
                 </div>
                 <div class="journey-card">
                     <div class="journey-header">
+                        <img src="img/unity.png" alt="Unity Population Health" class="journey-company-logo">
                         <div class="journey-date">SEP 2020 - JUL 2022</div>
                         <h3>Associate Data Engineer</h3>
                         <h4>Unity Population Health | Remote</h4>
@@ -1639,10 +1480,11 @@
             <!-- Journey Item 6 -->
             <div class="journey-item">
                 <div class="journey-node">
-                    <img src="img/spark foundations logo.jpeg" alt="The Spark Foundation" class="journey-node-logo">
+                    <span>🎓</span>
                 </div>
                 <div class="journey-card">
                     <div class="journey-header">
+                        <img src="img/spark_foundation.png" alt="The Spark Foundation" class="journey-company-logo">
                         <div class="journey-date">APR 2020 - AUG 2020</div>
                         <h3>Junior Data Scientist</h3>
                         <h4>The Spark Foundation | Remote</h4>
@@ -1667,7 +1509,7 @@
     </section>
     
     <!-- ============ EDUCATION ============ -->
-    <section id="education" class="animated-section bg-education">
+    <section id="education">
         <h2 class="section-title">EDUCATION</h2>
         <div class="education-grid">
             <div class="edu-card">
@@ -1712,17 +1554,13 @@
     </section>
 
     <!-- ============ PROJECTS ============ -->
-    <section id="projects" class="animated-section bg-projects">
+    <section id="projects">
         <h2 class="section-title">PROJECTS</h2>
         <div class="projects-grid">
             <div class="project-card">
                 <div class="project-header">
                     <h3>State Crime Analysis & Safety Prediction</h3>
                     <div class="project-date">Nov 2023</div>
-                </div>
-                <div class="project-media">
-                    <img src="img/crime.png" alt="State Crime Analysis" class="project-static">
-                    <img src="img/crimerate.gif" alt="State Crime Analysis preview" class="project-gif">
                 </div>
                 <div class="project-body">
                     <ul>
@@ -1745,10 +1583,6 @@
                     <h3>Wikipedia API Scraping + Solr</h3>
                     <div class="project-date">Oct 2023</div>
                 </div>
-                <div class="project-media">
-                    <img src="img/wikipedia_solr_log.png" alt="Wikipedia Solr" class="project-static">
-                    <img src="img/wiki-scrapping.gif" alt="Wikipedia Solr preview" class="project-gif">
-                </div>
                 <div class="project-body">
                     <ul>
                         <li>Scraped 500+ Wikipedia docs via API</li>
@@ -1769,10 +1603,6 @@
                 <div class="project-header">
                     <h3>Boolean Query & Inverted Index</h3>
                     <div class="project-date">Aug 2023</div>
-                </div>
-                <div class="project-media">
-                    <img src="img/invertedindex.webp" alt="Boolean Query" class="project-static">
-                    <img src="img/boolean.gif" alt="Boolean Query preview" class="project-gif">
                 </div>
                 <div class="project-body">
                     <ul>
@@ -1795,10 +1625,6 @@
                     <h3>Global Super Store CRUD App</h3>
                     <div class="project-date">Apr 2023</div>
                 </div>
-                <div class="project-media">
-                    <img src="img/superstore.jpg" alt="Super Store CRUD" class="project-static">
-                    <img src="img/virtual-supermarket.gif" alt="Super Store CRUD preview" class="project-gif">
-                </div>
                 <div class="project-body">
                     <ul>
                         <li>PostgreSQL database with strategic indexing</li>
@@ -1819,10 +1645,6 @@
                 <div class="project-header">
                     <h3>8-bit Computer Architecture Processor</h3>
                     <div class="project-date">Apr 2023</div>
-                </div>
-                <div class="project-media">
-                    <img src="img/8bit.png" alt="8-bit Processor" class="project-static">
-                    <img src="img/8bit.gif" alt="8-bit Processor preview" class="project-gif">
                 </div>
                 <div class="project-body">
                     <ul>
@@ -1845,10 +1667,6 @@
                     <h3>Healthcare ML Application</h3>
                     <div class="project-date">May 2022</div>
                 </div>
-                <div class="project-media">
-                    <img src="img/healthcare.jpg" alt="Healthcare ML" class="project-static">
-                    <img src="img/healthcare.gif" alt="Healthcare ML preview" class="project-gif">
-                </div>
                 <div class="project-body">
                     <ul>
                         <li>89% F1 Score Random Forest Classifier</li>
@@ -1868,7 +1686,7 @@
     </section>
 
     <!-- ============ SKILLS ============ -->
-    <section id="skills" class="animated-section bg-skills">
+    <section id="skills">
         <h2 class="section-title">TECH STACK</h2>
         <div class="skills-grid">
             <div class="skill-category">
@@ -1989,7 +1807,7 @@
     </section>
 
     <!-- ============ CERTIFICATIONS ============ -->
-    <section id="certifications" class="animated-section bg-certs">
+    <section id="certifications">
         <div class="section-header">
             <h2>CERTIFICATIONS</h2>
             <p>Professional certification growth trajectory — from research to enterprise-level expertise</p>
@@ -2022,140 +1840,102 @@
                     <line x1="80" y1="420" x2="1150" y2="420" stroke="var(--nb-black)" stroke-width="4"/>
 
                     <!-- Y-Axis Labels -->
-                    <text x="25" y="430" font-size="14" font-weight="700" fill="var(--nb-black)">YEAR</text>
-                    <text x="15" y="75" font-size="12" fill="var(--nb-black)" font-weight="600">2024</text>
-                    <text x="15" y="240" font-size="12" fill="var(--nb-black)" font-weight="600">2023</text>
-                    <text x="25" y="405" font-size="12" fill="var(--nb-black)" font-weight="600">2020</text>
+                    <text x="25" y="430" font-size="14" font-weight="700" fill="var(--nb-black)">EXPERTISE</text>
+                    <text x="15" y="75" font-size="12" fill="var(--nb-black)" font-weight="600">Expert</text>
+                    <text x="15" y="240" font-size="12" fill="var(--nb-black)" font-weight="600">Intermediate</text>
+                    <text x="25" y="405" font-size="12" fill="var(--nb-black)" font-weight="600">Beginner</text>
 
                     <!-- X-Axis Year Labels -->
-                    <text x="65" y="455" font-size="14" font-weight="700" fill="var(--nb-black)">2020</text>
-                    <text x="620" y="455" font-size="14" font-weight="700" fill="var(--nb-black)">2023</text>
+                    <text x="65" y="455" font-size="14" font-weight="700" fill="var(--nb-black)">2023</text>
                     <text x="1100" y="455" font-size="14" font-weight="700" fill="var(--nb-black)">2024</text>
                     <text x="580" y="480" font-size="14" font-weight="700" fill="var(--nb-black)">TIMELINE</text>
 
                     <!-- Line Path connecting points -->
-                    <polyline points="170,360 360,320 500,300 620,280 740,240 840,220 960,200 1080,170" 
+                    <polyline points="150,320 350,280 550,220 750,180 950,140" 
                               fill="none" stroke="url(#lineGradient)" stroke-width="5" 
                               stroke-linecap="round" stroke-linejoin="round"/>
 
                     <!-- Fill area under curve (subtle) -->
-                    <polygon points="170,360 360,320 500,300 620,280 740,240 840,220 960,200 1080,170 1080,425 960,425 840,425 740,425 620,425 500,425 360,425 170,425" 
+                    <polygon points="150,320 350,280 550,220 750,180 950,140 950,425 750,425 550,425 350,425 150,425" 
                              fill="url(#lineGradient)" opacity="0.1"/>
 
                     <!-- Data Points with Interactive Areas -->
-                    <!-- Point 1 - Jul 2020 -->
+                    <!-- Point 1 - Jul 2023 -->
                     <g class="cert-data-point" data-cert="1">
-                        <circle cx="170" cy="360" r="35" fill="var(--nb-yellow)" stroke="var(--nb-black)" stroke-width="4" class="point-circle"/>
-                        <image href="img/c7.png" x="154" y="344" width="32" height="32" class="point-emoji" />
-                        <circle cx="170" cy="360" r="45" fill="none" stroke="var(--nb-black)" stroke-width="3" opacity="0" class="point-hover-ring"/>
+                        <circle cx="150" cy="320" r="35" fill="var(--nb-yellow)" stroke="var(--nb-black)" stroke-width="4" class="point-circle"/>
+                        <text x="150" y="330" text-anchor="middle" font-size="24" class="point-emoji">📄</text>
+                        <circle cx="150" cy="320" r="45" fill="none" stroke="var(--nb-black)" stroke-width="3" opacity="0" class="point-hover-ring"/>
                         
-                        <text x="170" y="500" text-anchor="middle" font-size="12" font-weight="700" fill="var(--nb-black)" class="cert-name" transform="rotate(-25 170 500)">Intro to Data Science</text>
+                        <text x="150" y="500" text-anchor="middle" font-size="12" font-weight="700" fill="var(--nb-black)" class="cert-name">Predictions &amp; Analytics</text>
+                        <text x="150" y="520" text-anchor="middle" font-size="11" fill="var(--nb-black)" font-weight="600">JUL 2023</text>
                     </g>
 
-                    <!-- Point 2 - Jul 2023 -->
+                    <!-- Point 2 - Feb 2024 -->
                     <g class="cert-data-point" data-cert="2">
-                        <circle cx="360" cy="320" r="35" fill="var(--nb-orange)" stroke="var(--nb-black)" stroke-width="4" class="point-circle"/>
-                        <image href="img/Research Paper.jpg" x="344" y="304" width="32" height="32" class="point-emoji" />
-                        <circle cx="360" cy="320" r="45" fill="none" stroke="var(--nb-black)" stroke-width="3" opacity="0" class="point-hover-ring"/>
+                        <circle cx="350" cy="280" r="35" fill="var(--nb-orange)" stroke="var(--nb-black)" stroke-width="4" class="point-circle"/>
+                        <text x="350" y="290" text-anchor="middle" font-size="24" class="point-emoji">🏗️</text>
+                        <circle cx="350" cy="280" r="45" fill="none" stroke="var(--nb-black)" stroke-width="3" opacity="0" class="point-hover-ring"/>
                         
-                        <text x="360" y="500" text-anchor="middle" font-size="12" font-weight="700" fill="var(--nb-black)" class="cert-name" transform="rotate(-25 360 500)">Predictions &amp; Analytics</text>
+                        <text x="350" y="500" text-anchor="middle" font-size="12" font-weight="700" fill="var(--nb-black)" class="cert-name">Lakehouse Fundamentals</text>
+                        <text x="350" y="520" text-anchor="middle" font-size="11" fill="var(--nb-black)" font-weight="600">FEB 2024</text>
                     </g>
 
-                    <!-- Point 3 - Nov 2023 -->
+                    <!-- Point 3 - Feb 2024 -->
                     <g class="cert-data-point" data-cert="3">
-                        <circle cx="500" cy="300" r="35" fill="var(--nb-electric)" stroke="var(--nb-black)" stroke-width="4" class="point-circle"/>
-                        <image href="img/c4.png" x="484" y="284" width="32" height="32" class="point-emoji" />
-                        <circle cx="500" cy="300" r="45" fill="none" stroke="var(--nb-black)" stroke-width="3" opacity="0" class="point-hover-ring"/>
+                        <circle cx="550" cy="220" r="35" fill="var(--nb-electric)" stroke="var(--nb-black)" stroke-width="4" class="point-circle"/>
+                        <text x="550" y="230" text-anchor="middle" font-size="24" class="point-emoji">🤖</text>
+                        <circle cx="550" cy="220" r="45" fill="none" stroke="var(--nb-black)" stroke-width="3" opacity="0" class="point-hover-ring"/>
                         
-                        <text x="500" y="500" text-anchor="middle" font-size="12" font-weight="700" fill="var(--nb-black)" class="cert-name" transform="rotate(-25 500 500)">Data Analysis (Pandas)</text>
+                        <text x="550" y="500" text-anchor="middle" font-size="12" font-weight="700" fill="var(--nb-black)" class="cert-name">Generative AI Fundamentals</text>
+                        <text x="550" y="520" text-anchor="middle" font-size="11" fill="var(--nb-black)" font-weight="600">FEB 2024</text>
                     </g>
 
-                    <!-- Point 4 - Dec 2023 -->
+                    <!-- Point 4 - Mar 2024 -->
                     <g class="cert-data-point" data-cert="4">
-                        <circle cx="620" cy="280" r="35" fill="var(--nb-blue)" stroke="var(--nb-black)" stroke-width="4" class="point-circle"/>
-                        <image href="img/c3.png" x="604" y="264" width="32" height="32" class="point-emoji" />
-                        <circle cx="620" cy="280" r="45" fill="none" stroke="var(--nb-black)" stroke-width="3" opacity="0" class="point-hover-ring"/>
+                        <circle cx="750" cy="180" r="35" fill="var(--nb-blue)" stroke="var(--nb-black)" stroke-width="4" class="point-circle"/>
+                        <text x="750" y="190" text-anchor="middle" font-size="24" class="point-emoji">☁️</text>
+                        <circle cx="750" cy="180" r="45" fill="none" stroke="var(--nb-black)" stroke-width="3" opacity="0" class="point-hover-ring"/>
                         
-                        <text x="620" y="500" text-anchor="middle" font-size="12" font-weight="700" fill="var(--nb-black)" class="cert-name" transform="rotate(-25 620 500)">Intro to Generative AI</text>
-
+                        <text x="750" y="500" text-anchor="middle" font-size="12" font-weight="700" fill="var(--nb-black)" class="cert-name">Azure Data Engineer</text>
+                        <text x="750" y="520" text-anchor="middle" font-size="11" fill="var(--nb-black)" font-weight="600">MAR 2024</text>
                     </g>
 
-                    <!-- Point 5 - Feb 2024 -->
+                    <!-- Point 5 - Apr 2024 -->
                     <g class="cert-data-point" data-cert="5">
-                        <circle cx="740" cy="240" r="35" fill="var(--nb-red)" stroke="var(--nb-black)" stroke-width="4" class="point-circle"/>
-                        <image href="img/databricks lakehouse fundamentals.png" x="724" y="224" width="32" height="32" class="point-emoji" />
-                        <circle cx="740" cy="240" r="45" fill="none" stroke="var(--nb-black)" stroke-width="3" opacity="0" class="point-hover-ring"/>
+                        <circle cx="950" cy="140" r="35" fill="var(--nb-red)" stroke="var(--nb-black)" stroke-width="4" class="point-circle"/>
+                        <text x="950" y="150" text-anchor="middle" font-size="24" class="point-emoji">🏆</text>
+                        <circle cx="950" cy="140" r="45" fill="none" stroke="var(--nb-black)" stroke-width="3" opacity="0" class="point-hover-ring"/>
                         
-                        <text x="740" y="500" text-anchor="middle" font-size="12" font-weight="700" fill="var(--nb-black)" class="cert-name" transform="rotate(-25 740 500)">Lakehouse Fundamentals</text>
-
-                    </g>
-
-                    <!-- Point 6 - Feb 2024 -->
-                    <g class="cert-data-point" data-cert="6">
-                        <circle cx="840" cy="220" r="35" fill="var(--nb-yellow)" stroke="var(--nb-black)" stroke-width="4" class="point-circle"/>
-                        <image href="img/Gen AI.png" x="824" y="204" width="32" height="32" class="point-emoji" />
-                        <circle cx="840" cy="220" r="45" fill="none" stroke="var(--nb-black)" stroke-width="3" opacity="0" class="point-hover-ring"/>
-                        
-                        <text x="840" y="500" text-anchor="middle" font-size="12" font-weight="700" fill="var(--nb-black)" class="cert-name" transform="rotate(-25 840 500)">Gen AI Fundamentals</text>
-
-                    </g>
-
-                    <!-- Point 7 - Mar 2024 -->
-                    <g class="cert-data-point" data-cert="7">
-                        <circle cx="960" cy="200" r="35" fill="var(--nb-orange)" stroke="var(--nb-black)" stroke-width="4" class="point-circle"/>
-                        <image href="img/azure data engineer c.png" x="944" y="184" width="32" height="32" class="point-emoji" />
-                        <circle cx="960" cy="200" r="45" fill="none" stroke="var(--nb-black)" stroke-width="3" opacity="0" class="point-hover-ring"/>
-                        
-                        <text x="960" y="500" text-anchor="middle" font-size="12" font-weight="700" fill="var(--nb-black)" class="cert-name" transform="rotate(-25 960 500)">Azure Data Engineer</text>
-                    </g>
-
-                    <!-- Point 8 - Apr 2024 -->
-                    <g class="cert-data-point" data-cert="8">
-                        <circle cx="1080" cy="170" r="35" fill="var(--nb-electric)" stroke="var(--nb-black)" stroke-width="4" class="point-circle"/>
-                        <image href="img/databricks data engineer.png" x="1064" y="154" width="32" height="32" class="point-emoji" />
-                        <circle cx="1080" cy="170" r="45" fill="none" stroke="var(--nb-black)" stroke-width="3" opacity="0" class="point-hover-ring"/>
-                        
-                        <text x="1080" y="500" text-anchor="middle" font-size="12" font-weight="700" fill="var(--nb-black)" class="cert-name" transform="rotate(-25 1080 500)">Data Engineer Associate</text>
+                        <text x="950" y="500" text-anchor="middle" font-size="12" font-weight="700" fill="var(--nb-black)" class="cert-name">Data Engineer Associate</text>
+                        <text x="950" y="520" text-anchor="middle" font-size="11" fill="var(--nb-black)" font-weight="600">APR 2024</text>
                     </g>
 
                     <!-- Trending Label -->
                     <g>
                         <text x="980" y="100" font-size="14" font-weight="700" fill="var(--nb-black)">↗ TRENDING UP</text>
-                        <text x="980" y="120" font-size="12" fill="var(--nb-black)">  Skills Growth</text>
+                        <text x="980" y="120" font-size="12" fill="var(--nb-black)">+100% Skills Growth</text>
                     </g>
                 </svg>
 
                 <!-- Hover Tooltips (positioned absolutely) -->
                 <div class="cert-tooltip" data-cert="1">
-                    <img src="img/c7.png" alt="Introduction to Data Science">
-                    <div class="tooltip-label">Lovely Professional University</div>
-                </div>
-                <div class="cert-tooltip" data-cert="2">
-                    <img src="img/Research Paper.jpg" alt="Predictions & Analytics">
+                    <img src="img/badge.png" alt="Predictions & Analytics">
                     <div class="tooltip-label">IRJET Publication</div>
                 </div>
+                <div class="cert-tooltip" data-cert="2">
+                    <img src="img/lakehouse.png" alt="Lakehouse Fundamentals">
+                    <div class="tooltip-label">Databricks Academy</div>
+                </div>
                 <div class="cert-tooltip" data-cert="3">
-                    <img src="img/c4.png" alt="Data Analysis with Python">
-                    <div class="tooltip-label">Jovian</div>
+                    <img src="img/generative_ai.png" alt="Generative AI Fundamentals">
+                    <div class="tooltip-label">Databricks Academy</div>
                 </div>
                 <div class="cert-tooltip" data-cert="4">
-                    <img src="img/c3.png" alt="Introduction to Generative AI">
-                    <div class="tooltip-label">Google Cloud Skills Boost</div>
-                </div>
-                <div class="cert-tooltip" data-cert="5">
-                    <img src="img/databricks lakehouse fundamentals.png" alt="Lakehouse Fundamentals">
-                    <div class="tooltip-label">Databricks Academy</div>
-                </div>
-                <div class="cert-tooltip" data-cert="6">
-                    <img src="img/Gen AI.png" alt="Generative AI Fundamentals">
-                    <div class="tooltip-label">Databricks Academy</div>
-                </div>
-                <div class="cert-tooltip" data-cert="7">
-                    <img src="img/azure data engineer c.png" alt="Azure Data Engineer">
+                    <img src="img/azure.png" alt="Azure Data Engineer">
                     <div class="tooltip-label">Microsoft</div>
                 </div>
-                <div class="cert-tooltip" data-cert="8">
-                    <img src="img/databricks data engineer.png" alt="Data Engineer Associate">
+                <div class="cert-tooltip" data-cert="5">
+                    <img src="img/databricks_cert.png" alt="Data Engineer Associate">
                     <div class="tooltip-label">Databricks Academy</div>
                 </div>
             </div>
@@ -2163,7 +1943,7 @@
     </section>
 
     <!-- ============ GET IN TOUCH ============ -->
-    <div class="contact-section animated-section bg-contact" id="contact-section">
+    <div class="contact-section" id="contact-section">
         <div class="contact-container">
             <div class="contact-content">
                 <h2>LET'S CONNECT</h2>
